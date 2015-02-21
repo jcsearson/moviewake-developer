@@ -1,0 +1,62 @@
+/* ----- Borders ----- */
+.wufoo .info, .wufoo .paging-context {
+	border-top: 2px dotted $black;
+	border-bottom: 2px dotted $black;
+}
+
+/* ----- Typography ----- */
+.wufoo .info h2 {
+	font-size:160%;
+	font-family:inherit;
+	font-style:normal;
+	font-weight:normal;
+	color:#000000;
+}
+
+.wufoo .section h3 {
+	font-size:110%;
+	font-family:inherit;
+	font-style:normal;
+	font-weight:normal;
+	color:#000000;
+}
+
+.wufoo .section div {
+	font-size:85%;
+	font-family:inherit;
+	font-style:normal;
+	font-weight:normal;
+	color:#444444;
+}
+
+.wufoo label.desc, .wufoo legend.desc {
+	font-size:95%;
+	font-family:inherit;
+	font-style:normal;
+	font-weight:bold;
+	color:#444444;
+}
+
+.wufoo label.choice {
+	font-size:100%;
+	font-family:inherit;
+	font-style:normal;
+	font-weight:normal;
+	color:#444444;
+}
+
+.wufoo input.text, .wufoo textarea.textarea, .wufoo input.file, .wufoo select.select {
+	font-style:normal;
+	font-weight:normal;
+	color:#333333;
+	font-size:100%;
+	width: 100%;
+}
+
+/* ----- Button Styles ----- */
+
+.wufoo input.btTxt {
+	padding: 5px 25px !important;
+	font-size: 24px;
+	text-align: center;
+}

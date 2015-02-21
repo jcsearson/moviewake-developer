@@ -1,0 +1,391 @@
+//----------------------Susy setup -------------------------
+//====================================
+$total-colums		: 12;
+$column-width		: 4em;
+$gutter-width		: 1em;
+$grid-padding		: $gutter-width;
+
+@include border-box-sizing;
+
+$small				: 30em;
+$medium			: 47em;
+$large				: 75em;
+
+
+header {
+	background: $white;
+	width: 100%;
+}
+
+//=====================================
+//---------------------- header  -------------------------
+//=====================================
+.main-title {
+	background: $black;
+	width: 100%;
+	padding: 0 1em 5px 3em;
+	@include bp(grandpa) {
+		padding: 0 3em 5px 3em;
+	}
+	@include bp(mama) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.title-site {
+		width: 100%;
+		background: $black;
+		padding: 0 10% 0 10%;
+		padding-left: 0!important;
+		padding-right: 0!important;
+		display: block;
+		@include clearfix;
+		@include container;
+		@include bp(baby) {
+			padding-left: 0;
+		}
+		.site-name {
+			float: left;
+			display: inline;
+			@include clearfix;
+			a{
+				h2 {
+					display: inline-block;
+					text-align: center;
+					margin: 0 0 -20px 0;
+					padding-left: 0;
+					font-size: 40px;
+					letter-spacing: 5px;
+					color: $white;
+					@include font-stack-body;
+					@include bp(mama) {
+						font-size: 24px;
+					}
+					@include bp(baby) {
+						font-size: 16px;
+					}
+					span {
+						font-size: 64px;
+						@include bp(mama) {
+							font-size: 44px;
+						}
+
+					}
+				}  //  h2
+			} //  a
+		}  //  .site-name
+		#search-wrapper {
+			float: right;
+			margin-top: 10px;
+			@include clearfix;
+			@include bp(mama) {
+				float: left;
+				display: block;
+				width: 100%;
+			}
+			input[type=search] {
+				@include bp(mama) {
+					width: 280px;
+					background-position: 10px 10px;
+				}
+			}
+		}  //  #search-wrapper
+	}  //  .title-site
+}
+
+//=====================================
+//---------------------- SEARCH BOX  -------------------------
+//=====================================
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+	display: none; 
+}
+input[type=search] {
+	background: $black url(../images/svg/search.svg) no-repeat center;
+	fill: $white;
+	background-size: 30px;
+	border: 3px solid $gold;
+	padding: 9px 10px 9px 32px;
+	width: 155px;
+	
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+input[type=search]:focus {
+	width: 270px;
+	background-color: #fff;
+	border-color: $gold;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+#search-wrapper input[type=search] {
+	width: 25px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+#search-wrapper input[type=search]:hover {
+	background-color: $white;
+}
+#search-wrapper input[type=search]:focus {
+	width: 250px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#search-wrapper input:-moz-placeholder {
+	color: transparent;
+}
+#search-wrapper input::-webkit-input-placeholder {
+	color: transparent;
+}
+.search-submit {
+	display: none;
+}
+//=====================================
+//---------------------- header  -------------------------
+//=====================================
+.navigation {
+	width: 100%;
+	padding: 0 1em 5px 3em;
+	margin-bottom: 50px;
+	background: $black;
+	@include bp(grandpa) {
+		padding: 0 3em 5px 3em;
+	}
+	@include bp(mama) {
+		margin-bottom: 10px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.layout {
+		padding: 0;
+		.dropdown {
+			padding-top: 5px;
+			@include bp(papa) {
+				width: 200%;
+			}
+			li {
+				a {
+					&:before, &:after {
+						background: -webkit-linear-gradient(rgba(black, 0.2), rgba(black, 0), rgba(black, 0.2));
+						height: 100%;
+					}
+				}
+			}
+		}
+		ul {
+			width: 100%;
+			border-radius: 5px;
+			display: inline;
+			position: relative;
+			//display: inline-block;
+			@include clearfix;
+			@include bp(mama) {
+				border-radius: 0;
+			}
+			a:hover {
+				border-radius: 5px;
+			}
+			li {
+				width: 20%;
+				float: left;
+				display: inline-block;
+				text-align: center;
+				position: relative;
+				.dropdown {
+					border-radius: 0;
+					display: none;
+					position: absolute;
+					visibility: hidden;
+					box-shadow: none;
+					.dropdown-item {
+						width: 100%;
+						z-index: 1;
+						border-radius: 0;
+						> a {
+
+						}
+					}
+					.dropdown-item:hover a, .dropdown-item:focus a {
+						a {
+							background: darken($blue, 20%);
+						}
+					}
+				}
+				a {
+					padding: 5px 0;
+					position: relative;
+					display: block;
+					color: $white;
+					background: $blue;
+					@include text-shadow($blue 0 0);
+					@include font-stack-header;
+					@include bp(mama) {
+						padding: 10px 0;
+					}
+					@include bp(baby) {
+						font-size: 16px;
+					}
+					&:before, &:after {  //----SHADING
+						content: "";
+						bottom: 0;
+						left: 0;
+						width: 100%;
+						height: 60%;
+						background: -webkit-linear-gradient(rgba(black, 0), rgba(black, 0.3));
+						position: absolute;
+						pointer-events: none;
+					}
+				}   //  a
+				a:hover, a:active {
+					border-radius: 0;
+				}   //  a:hover
+			}   //  li
+			.nav-main:hover, .nav-main:focus {
+				border-left: 2px solid $black;
+				border-right: 2px solid $black;
+				&:first-child { border-left: none; }
+				&:last-child { border-right: none; }
+				a:hover { background: darken($blue, 20%); color: $gold; }
+			}
+			li:hover .dropdown, li:focus .dropdown {
+				opacity: 1;
+				display: block;
+				visibility: visible;	
+			}
+		}   //  ul.nav
+	}   //  .layout
+}   //  .navigation
+
+
+
+
+//=====================================
+//----------------------- content ------------------------------
+//=====================================
+.layout {
+	@include container;
+	@include bp(mama) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	.primary {
+		@include at-breakpoint($large) {
+			@include span-columns(8,12);
+		}
+	}   //  .primary
+	.recentreview {
+		padding: 0;
+		@include at-breakpoint($large) {
+			margin-left: 0;
+			margin-right: 0;
+			@include span-columns(4 omega, 12);
+			h1 {
+				font-size: 30px;
+				color: $white;
+			}
+			.recentmovie {
+				padding: 0 5% 0 5%;
+				background: $black;
+				p {
+					padding-top: 10px;
+				}
+			}  //  .recentmovie
+		}  //  bp($large)
+	}   //  .recentreview
+	.soontotheatre {
+		margin-top: 0;
+		margin-bottom: 25px;
+		padding: 0;
+		@include at-breakpoint($large) {
+			margin-left: 0;
+			margin-right: 0;
+			@include span-columns(4 omega, 12);
+			h1 {
+				font-size: 30px;
+				color: $white;
+
+			}
+			.comingsoon {
+				padding: 0 5% 0 5%;
+				background: $black;
+				p {
+					padding-top: 10px;
+				}
+			}  //  .comingsoon
+		}  //  @bp(large)
+	}   //  .soontotheatre
+}   //  .layout
+
+
+
+
+//=====================================
+//------------------------- singlefilm --------------------------
+//=====================================
+.singlefilm {
+
+	margin: 0;
+	@include bp(grandpa) {
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+	@include bp(mama) {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 10px;
+	}
+	.singlewrap {
+		background: $white;
+		h2 {
+			font-size: 40px;
+			margin-bottom: 10px;
+			@include bp(mama) {
+				font-size: 24px;
+			}
+		}
+		p {
+			@include bp(mama) {
+				font-size: 16px;
+			}
+		}
+	}   //  .singlewrap
+}   //  .singlefilm
+
+
+
+
+//=====================================
+//---------------------------- footer ---------------------------
+//=====================================
+.social-footer {
+	margin-top: 50px;
+	color: $white;
+	background: $black;
+}   //  .social-footer
+.slogan-footer {
+	width: 100%;
+	display: inline-block;
+	color: $white;
+	background: lighten($black, 15%);
+}  //  .slogan-footer

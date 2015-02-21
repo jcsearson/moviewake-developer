@@ -1,0 +1,50 @@
+//Compensates for white flash from typekit font request.
+@mixin FOUTprevent {
+  .wf-loading & {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes fontfix {
+    from { opacity: 1; }
+    to   { opacity: 1; }
+}
+
+//----------------------------------------FONTS--
+@mixin font-stack-brand {
+	font-family: "proxima-nova",sans-serif;
+      @include FOUTprevent;
+}
+
+@mixin font-stack-header {
+	font-family: "private-sans-web",sans-serif;
+      @include FOUTprevent;
+}
+
+@mixin font-stack-body {
+      font-family: "source-sans-pro",sans-serif;
+      @include FOUTprevent;
+}
+
+//----------------------------------------BREAKPOINTS--
+@mixin bp($point) {
+  @if $point == grandma {
+    @media (min-width: 1400px ) { @content; }
+  }
+  @if $point == grandpa {
+    @media (max-width: 1190px ) { @content; }
+  }
+
+  @if $point == papa {
+    @media (max-width: 800px) { @content; }
+  }
+  @if $point == mama {
+    @media (max-width: 635px) { @content; }
+  }
+  @if $point == baby {
+    @media (max-width: 550px) { @content; }
+  }
+  @if $point == phone {
+    @media (max-width: 390px) { @content; }
+  }
+}
