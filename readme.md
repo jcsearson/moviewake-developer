@@ -7,7 +7,7 @@ Developer (Non-CMS) Version
 
 ## Description ##
 
-Using the stripped Wordpress theme <a href="https://github.com/lacymorrow/casper-wp">"Casper"</a>, this was designed for intent of use with MovieWake.com, a database where "above average" films can be archived.
+Using the stripped Wordpress theme <a href="https://github.com/lacymorrow/casper-wp">Casper</a>, this was designed for intent of use with MovieWake.com, a database where "above average" films can be archived.
 
 ## Tasks ##
 
